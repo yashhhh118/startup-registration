@@ -3,213 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Club Hub - Login & Registration</title>
+    <title>Welcome to Club Hub</title>
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Custom Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* Style for the form container flip animation */
-        .form-container.flipped .flipper {
-            transform: rotateY(180deg);
-        }
-        .flipper {
-            transition: transform 0.8s;
-            transform-style: preserve-3d;
-        }
-        .front, .back {
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden; /* Safari */
-        }
-        .back {
-            transform: rotateY(180deg);
+        .gradient-text {
+            background: linear-gradient(to right, #a855f7, #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
 <body class="bg-slate-900 text-white">
     <!-- Main container -->
-    <div class="min-h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden">
+    <div class="min-h-screen flex flex-col items-center justify-center p-4 text-center relative overflow-hidden">
         
         <!-- Abstract background shapes -->
         <div class="absolute top-[-50px] left-[-50px] w-72 h-72 bg-indigo-600/30 rounded-full filter blur-3xl opacity-50 animate-blob"></div>
         <div class="absolute bottom-[-50px] right-[-50px] w-72 h-72 bg-purple-600/30 rounded-full filter blur-3xl opacity-50 animate-blob animation-delay-4000"></div>
-        
-        <div class="w-full max-w-md z-10">
-            <!-- Logo and Title -->
-            <div class="text-center mb-8">
-                <h1 class="text-4xl font-bold text-gray-100 tracking-wider">Club Hub</h1>
-                <p class="text-slate-400 mt-2">D Y Patil International University </p>
-            </div>
 
-            <!-- Form container with flip animation -->
-            <div id="form-container" class="form-container w-full" style="perspective: 1000px; transition: height 0.6s ease;">
-                <div class="flipper relative w-full h-full">
-                    <!-- Front side: Login Form -->
-                    <div class="front absolute w-full h-full">
-                        <div id="login-card" class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-lg border border-slate-700">
-                            <!-- Login Form -->
-                            <form id="loginForm">
-                                <div class="mb-5">
-                                    <label for="login-email" class="block text-xs font-medium text-slate-400 mb-1">STUDENT EMAIL</label>
-                                    <input type="email" id="login-email" name="email" class="w-full px-4 py-3 bg-slate-700 border border-slate-600 text-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="your_prn@dypiu.ac.in" required>
-                                </div>
-                                <div class="mb-5 relative">
-                                    <label for="login-password" class="block text-xs font-medium text-slate-400 mb-1">PASSWORD</label>
-                                    <input type="password" id="login-password" name="password" class="w-full px-4 py-3 bg-slate-700 border border-slate-600 text-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="••••••••" required>
-                                </div>
-                                <button type="submit" class="w-full bg-slate-200 text-slate-900 py-3 rounded-lg font-semibold hover:bg-white transition duration-300 flex items-center justify-center">
-                                    LOG IN
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                                </button>
-                            </form>
-                            <div class="text-center mt-6">
-                                <a href="#" class="text-sm text-slate-400 hover:underline">Forgot Password?</a>
-                            </div>
-                            <p class="text-center text-sm text-slate-400 mt-8">
-                                Don't have an account? <a href="#" id="show-register" class="font-semibold text-indigo-400 hover:underline">Register Now</a>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Back side: Registration Form -->
-                    <div class="back absolute w-full h-full">
-                         <div id="register-card" class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-lg border border-slate-700">
-                            <h2 class="text-2xl font-semibold text-center text-gray-200 mb-6">Create Your Account</h2>
-                            <!-- Registration Form -->
-                            <form id="registerForm">
-                                <div class="mb-4">
-                                    <label for="register-name" class="block text-xs font-medium text-slate-400 mb-1">FULL NAME</label>
-                                    <input type="text" id="register-name" class="w-full px-4 py-3 bg-slate-700 border border-slate-600 text-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter your full name" required>
-                                </div>
-                                 <div class="mb-4">
-                                    <label for="register-email" class="block text-xs font-medium text-slate-400 mb-1">STUDENT EMAIL</label>
-                                    <input type="email" id="register-email" class="w-full px-4 py-3 bg-slate-700 border border-slate-600 text-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="your.name@pccoe.edu.in" required>
-                                </div>
-                                <div class="mb-6 relative">
-                                    <label for="register-password" class="block text-xs font-medium text-slate-400 mb-1">CREATE PASSWORD</label>
-                                    <input type="password" id="register-password" class="w-full px-4 py-3 bg-slate-700 border border-slate-600 text-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Minimum 8 characters" required>
-                                </div>
-                                <button type="submit" class="w-full bg-slate-200 text-slate-900 py-3 rounded-lg font-semibold hover:bg-white transition duration-300">Create Account</button>
-                            </form>
-                            <p class="text-center text-sm text-slate-400 mt-6">
-                                Already have an account? <a href="#" id="show-login" class="font-semibold text-indigo-400 hover:underline">Login</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+        <div class="z-10 max-w-2xl">
+            <!-- Main Title -->
+            <h1 class="text-5xl md:text-7xl font-extrabold text-gray-100 tracking-tight">
+                Welcome to <span class="gradient-text">Club Hub</span>
+            </h1>
+            <p class="text-slate-400 mt-4 max-w-xl mx-auto text-lg">
+                The central place to discover, join, and manage all student clubs and events at Pimpri-Chinchwad College of Engineering.
+            </p>
+            
+            <!-- Role Selection Buttons -->
+            <div class="mt-12 flex flex-col sm:flex-row justify-center gap-4">
+                <!-- Participant Button -->
+                <a href="participant_login.html" class="group relative inline-block text-lg font-semibold text-center text-white bg-indigo-600 rounded-lg px-8 py-4 transition-transform transform hover:scale-105 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 focus:ring-offset-slate-900">
+                    <span class="relative z-10">I am a Participant</span>
+                </a>
+                
+                <!-- Host Button -->
+                <a href="host_login.html" class="group relative inline-block text-lg font-semibold text-center text-slate-900 bg-slate-200 rounded-lg px-8 py-4 transition-transform transform hover:scale-105 hover:bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-400 focus:ring-offset-slate-900">
+                     <span class="relative z-10">I am a Host</span>
+                </a>
             </div>
         </div>
     </div>
-
-    <!-- Floating message box for notifications -->
-    <div id="messageBox" class="fixed bottom-5 right-5 bg-green-500 text-white py-2 px-4 rounded-lg shadow-xl transition-transform transform translate-y-20 opacity-0">
-        <p id="messageText"></p>
-    </div>
-
-    <script>
-        // --- Interactivity for the page ---
-
-        const formContainer = document.getElementById('form-container');
-        const showRegisterLink = document.getElementById('show-register');
-        const showLoginLink = document.getElementById('show-login');
-        const loginForm = document.getElementById('loginForm');
-        const registerForm = document.getElementById('registerForm');
-        const messageBox = document.getElementById('messageBox');
-        const messageText = document.getElementById('messageText');
-        const loginCard = document.getElementById('login-card');
-        const registerCard = document.getElementById('register-card');
-
-        // --- Dynamic Height Adjustment ---
-        // Function to adjust the container height based on the visible card
-        function adjustContainerHeight() {
-            if (formContainer.classList.contains('flipped')) {
-                formContainer.style.height = `${registerCard.offsetHeight}px`;
-            } else {
-                formContainer.style.height = `${loginCard.offsetHeight}px`;
-            }
-        }
-
-        // Adjust height on page load
-        window.addEventListener('load', adjustContainerHeight);
-        // Adjust height on window resize
-        window.addEventListener('resize', adjustContainerHeight);
-
-
-        // Event listener to flip to the registration form
-        showRegisterLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            formContainer.classList.add('flipped');
-            adjustContainerHeight();
-        });
-
-        // Event listener to flip back to the login form
-        showLoginLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            formContainer.classList.remove('flipped');
-            adjustContainerHeight();
-        });
-
-        // Handle login form submission
-        loginForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = e.target.email.value;
-            // In a real app, you would send this to a server.
-            // For this demo, we'll just show a success message.
-            if(email === "leader@pccoe.edu.in") {
-                 showMessage('Welcome Club Leader!', 'success');
-                 // Redirect to leader dashboard after a delay
-                 setTimeout(() => { /* window.location.href = '/leader-dashboard.html'; */ }, 2000);
-            } else {
-                 showMessage(`Welcome ${email.split('@')[0]}!`, 'success');
-                 // Redirect to student dashboard after a delay
-                 setTimeout(() => { /* window.location.href = '/dashboard.html'; */ }, 2000);
-            }
-        });
-
-        // Handle registration form submission
-        registerForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // In a real app, you would send this to a server.
-            // For this demo, we'll show success and flip the form.
-            showMessage('Account created successfully! Please log in.', 'success');
-            setTimeout(() => {
-                formContainer.classList.remove('flipped');
-            }, 2000);
-        });
-
-        /**
-         * Toggles the visibility of a password field.
-         * @param {string} fieldId - The ID of the password input field.
-         */
-        function togglePassword(fieldId) {
-            const passwordField = document.getElementById(fieldId);
-            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordField.setAttribute('type', type);
-        }
-        
-        /**
-         * Displays a temporary message to the user.
-         * @param {string} message - The message to display.
-         * @param {string} type - 'success' or 'error'.
-         */
-        function showMessage(message, type = 'success') {
-            messageText.textContent = message;
-            messageBox.className = `fixed bottom-5 right-5 text-white py-2 px-4 rounded-lg shadow-xl transition-all duration-300 transform translate-y-0 opacity-100 ${type === 'success' ? 'bg-green-500' : 'bg-red-500'}`;
-
-            setTimeout(() => {
-                 messageBox.className = messageBox.className.replace('translate-y-0 opacity-100', 'translate-y-20 opacity-0');
-            }, 3000); // Hide after 3 seconds
-        }
-
-    </script>
 </body>
 </html>
-
-
-
