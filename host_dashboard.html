@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Host Dashboard - Club Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(-45deg, #002b1f, #004d40, #002633);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body class="text-white">
+
+    <!-- Header / Navigation Bar -->
+    <header class="bg-black/20 backdrop-blur-lg border-b border-white/10 sticky top-0 z-50">
+        <nav class="container mx-auto px-4 lg:px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold tracking-wider text-amber-400">Club Hub</a>
+                <ul class="hidden md:flex items-center space-x-6">
+                    <li><a href="#" class="text-slate-200 font-semibold border-b-2 border-amber-400 pb-1">Dashboard</a></li>
+                    <li><a href="#" class="text-slate-300 hover:text-white transition">My Competitions</a></li>
+                    <li><a href="#" class="text-slate-300 hover:text-white transition">Analytics</a></li>
+                </ul>
+                <div class="relative">
+                    <button id="profile-button" class="w-10 h-10 rounded-full bg-amber-500 text-slate-900 flex items-center justify-center font-bold text-lg">H</button>
+                    <div id="profile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-gray-800/80 backdrop-blur-lg rounded-lg shadow-lg border border-white/10 py-1">
+                        <a href="#" class="block px-4 py-2 text-sm text-slate-300 hover:bg-gray-700">My Profile</a>
+                        <a href="login.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-gray-700">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container mx-auto px-4 lg:px-6 py-8">
+        <!-- Dashboard Header -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-100">Host Dashboard</h1>
+                <p class="text-slate-400 mt-1">Manage your events and view participant data.</p>
+            </div>
+            <div>
+                <a href="create_competition.html" class="bg-amber-500 text-slate-900 font-bold py-3 px-6 rounded-full hover:bg-amber-400 transition-transform transform hover:scale-105 inline-block whitespace-nowrap">
+                    + Create New Event
+                </a>
+            </div>
+        </div>
+
+        <!-- Analytics Summary -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-black/20 backdrop-blur-lg border border-white/10 rounded-xl p-6">
+                <h3 class="text-slate-400 text-sm font-medium">Total Events Created</h3>
+                <p class="text-3xl font-bold text-white mt-2">12</p>
+            </div>
+            <div class="bg-black/20 backdrop-blur-lg border border-white/10 rounded-xl p-6">
+                <h3 class="text-slate-400 text-sm font-medium">Total Participants Registered</h3>
+                <p class="text-3xl font-bold text-white mt-2">1,284</p>
+            </div>
+            <div class="bg-black/20 backdrop-blur-lg border border-white/10 rounded-xl p-6">
+                <h3 class="text-slate-400 text-sm font-medium">Certificates Sent</h3>
+                <p class="text-3xl font-bold text-white mt-2">932</p>
+            </div>
+        </div>
+
+        <!-- Search and Filter Bar -->
+        <div class="mb-6 flex flex-col md:flex-row gap-4 items-center">
+            <div class="relative w-full md:w-1/2">
+                <input type="text" placeholder="Search for an event..." class="w-full bg-black/20 border border-white/10 rounded-full py-3 pl-12 pr-4 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400">
+                <svg class="w-5 h-5 text-slate-400 absolute left-4 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </div>
+        </div>
+
+        <!-- Your Competitions Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Event Card 1 (Example for a completed event) -->
+            <div class="bg-black/20 backdrop-blur-lg rounded-xl overflow-hidden border border-white/10 group">
+                <img src="https://placehold.co/600x400/004d40/fbbf24?text=Event+Poster" alt="Event Poster" class="w-full h-40 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-bold text-gray-100 truncate">Annual Startup Pitch</h3>
+                    <p class="text-sm text-slate-400 mt-1">Event Date: Oct 25, 2025</p>
+                    <p class="text-sm font-semibold text-amber-400 mt-2">42 Registered</p>
+                    <div class="flex gap-4 mt-4">
+                        <button class="w-full bg-slate-700/50 py-2 rounded-lg font-semibold hover:bg-slate-600/50 transition">View Participants</button>
+                        <button class="w-full bg-amber-500 text-slate-900 py-2 rounded-lg font-bold hover:bg-amber-400 transition">Send Certificates</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Event Card 2 (Example for an active event) -->
+             <div class="bg-black/20 backdrop-blur-lg rounded-xl overflow-hidden border border-white/10 group">
+                <img src="https://placehold.co/600x400/004d40/fbbf24?text=Event+Poster" alt="Event Poster" class="w-full h-40 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-bold text-gray-100 truncate">Hackathon 2025</h3>
+                    <p class="text-sm text-slate-400 mt-1">Event Date: Nov 15, 2025</p>
+                    <p class="text-sm font-semibold text-amber-400 mt-2">15 Registered</p>
+                     <div class="flex gap-4 mt-4">
+                        <button class="w-full bg-slate-700/50 py-2 rounded-lg font-semibold hover:bg-slate-600/50 transition">View Participants</button>
+                        <button class="w-full bg-slate-600 text-slate-400 py-2 rounded-lg font-bold cursor-not-allowed">Send Certificates</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More cards would go here -->
+        </div>
+
+    </main>
+
+    <script>
+        const profileButton = document.getElementById('profile-button');
+        const profileDropdown = document.getElementById('profile-dropdown');
+        profileButton.addEventListener('click', () => { profileDropdown.classList.toggle('hidden'); });
+        window.addEventListener('click', function(e) {
+            if (e.target.closest('#profile-button')) return;
+            if (!profileDropdown.classList.contains('hidden')) { profileDropdown.classList.add('hidden'); }
+        });
+    </script>
+</body>
+</html>
+
