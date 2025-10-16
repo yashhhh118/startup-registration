@@ -11,7 +11,9 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(-45deg, #002b1f, #004d40, #002633);
+            /* New Color Theme: Dark Blue background */
+            background-color: #050f2a;
+            background-image: linear-gradient(-45deg, #050f2a, #1a2955, #050f2a);
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
         }
@@ -23,23 +25,23 @@
         }
 
         .form-input {
-            background: rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(184, 169, 255, 0.1);
+            border: 1px solid rgba(184, 169, 255, 0.2);
         }
         .form-input:focus {
-            background: rgba(0, 0, 0, 0.3);
-            border-color: rgba(251, 191, 36, 0.7);
+            background: rgba(184, 169, 255, 0.2);
+            border-color: #7bbbff;
             outline: none;
         }
     </style>
 </head>
-<body class="text-white">
+<body style="color: #f2fdff;">
 
     <!-- Header -->
-    <header class="bg-black/20 backdrop-blur-lg border-b border-white/10 sticky top-0 z-50">
+    <header class="bg-black/20 backdrop-blur-lg border-b sticky top-0 z-50" style="border-color: rgba(184, 169, 255, 0.2);">
         <nav class="container mx-auto px-4 lg:px-6 py-3">
              <div class="flex justify-between items-center">
-                <a href="host_dashboard.html" class="text-2xl font-bold tracking-wider text-amber-400">Club Hub</a>
+                <a href="host_dashboard.html" class="text-2xl font-bold tracking-wider" style="color: #7bbbff;">Club Hub</a>
              </div>
         </nav>
     </header>
@@ -48,42 +50,42 @@
     <main class="container mx-auto px-4 lg:px-6 py-8">
         <div class="max-w-3xl mx-auto">
             <div class="mb-8">
-                <h1 class="text-3xl font-bold text-gray-100">Create New Event</h1>
+                <h1 class="text-3xl font-bold" style="color: #f2fdff;">Create New Event</h1>
                 <p class="text-slate-400 mt-1">Fill in the details for your competition.</p>
             </div>
 
             <!-- Event Form -->
-            <div class="bg-black/20 backdrop-blur-lg border border-white/10 rounded-xl shadow-lg p-8">
+            <div class="bg-black/20 backdrop-blur-lg border rounded-xl shadow-lg p-8" style="border-color: rgba(184, 169, 255, 0.2);">
                 <form action="#" method="POST" class="space-y-6">
                     <div>
                         <label for="event-name" class="block text-sm font-semibold text-slate-300 mb-2">Event Name</label>
-                        <input type="text" id="event-name" class="w-full p-3 rounded-lg form-input text-white" required>
+                        <input type="text" id="event-name" class="w-full p-3 rounded-lg form-input" style="color: #f2fdff;" required>
                     </div>
 
                     <div>
                         <label for="event-poster" class="block text-sm font-semibold text-slate-300 mb-2">Event Poster (Image Upload)</label>
-                        <input type="file" id="event-poster" accept="image/*" class="w-full text-slate-300 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-amber-500 file:text-slate-900 hover:file:bg-amber-400">
+                        <input type="file" id="event-poster" accept="image/*" class="w-full text-slate-300 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold" style="file:background-color: #7bbbff; file:color: #050f2a;">
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label for="event-date" class="block text-sm font-semibold text-slate-300 mb-2">Event Date & Time</label>
-                            <input type="datetime-local" id="event-date" class="w-full p-3 rounded-lg form-input text-white">
+                            <input type="datetime-local" id="event-date" class="w-full p-3 rounded-lg form-input" style="color: #f2fdff;">
                         </div>
                         <div>
                              <label for="event-venue" class="block text-sm font-semibold text-slate-300 mb-2">Venue (Optional)</label>
-                             <input type="text" id="event-venue" class="w-full p-3 rounded-lg form-input text-white" placeholder="e.g., Online or Auditorium">
+                             <input type="text" id="event-venue" class="w-full p-3 rounded-lg form-input" placeholder="e.g., Online or Auditorium" style="color: #f2fdff;">
                         </div>
                     </div>
 
                     <div>
                         <label for="event-desc" class="block text-sm font-semibold text-slate-300 mb-2">Brief Description</label>
-                        <textarea id="event-desc" rows="4" class="w-full p-3 rounded-lg form-input text-white" required></textarea>
+                        <textarea id="event-desc" rows="4" class="w-full p-3 rounded-lg form-input" style="color: #f2fdff;" required></textarea>
                     </div>
 
                     <div class="flex justify-end items-center gap-4 pt-4">
-                        <a href="host_dashboard.html" class="text-slate-300 hover:text-white font-semibold py-3 px-6 rounded-full">Cancel</a>
-                        <button type="submit" class="bg-amber-500 text-slate-900 font-bold py-3 px-6 rounded-full hover:bg-amber-400 transition-transform transform hover:scale-105">
+                        <a href="host_dashboard.html" class="font-semibold py-3 px-6 rounded-full hover:text-white" style="color: #b8a9ff;">Cancel</a>
+                        <button type="submit" class="font-bold py-3 px-6 rounded-full transition-transform transform hover:scale-105" style="background-color: #7bbbff; color: #050f2a;">
                             Create Event
                         </button>
                     </div>

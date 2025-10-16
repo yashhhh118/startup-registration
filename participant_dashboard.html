@@ -11,8 +11,9 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            /* Matching the login page's animated background */
-            background: linear-gradient(-45deg, #002b1f, #004d40, #002633);
+            /* New Color Theme: Dark Blue background */
+            background-color: #050f2a;
+            background-image: linear-gradient(-45deg, #050f2a, #1a2955, #050f2a);
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
         }
@@ -34,29 +35,29 @@
         }
     </style>
 </head>
-<body class="text-white overflow-hidden">
+<body class="overflow-hidden" style="color: #f2fdff;">
 
     <!-- Header / Navigation Bar -->
-    <header class="bg-black/20 backdrop-blur-lg border-b border-white/10 fixed top-0 w-full z-50">
+    <header class="bg-black/20 backdrop-blur-lg border-b fixed top-0 w-full z-50" style="border-color: rgba(184, 169, 255, 0.2);">
         <nav class="container mx-auto px-4 lg:px-6 py-3">
             <div class="flex justify-between items-center">
                 <!-- Logo -->
-                <a href="#" class="text-2xl font-bold tracking-wider text-amber-400">Club Hub</a>
+                <a href="#" class="text-2xl font-bold tracking-wider" style="color: #7bbbff;">Club Hub</a>
 
                 <!-- Navigation Links -->
                 <ul class="hidden md:flex items-center space-x-6">
-                    <li><a href="#" class="text-slate-200 font-semibold border-b-2 border-amber-400 pb-1">Dashboard</a></li>
+                    <li><a href="#" class="font-semibold pb-1" style="color: #f2fdff; border-bottom: 2px solid #7bbbff;">Dashboard</a></li>
                     <li><a href="#" class="text-slate-300 hover:text-white transition">All Competitions</a></li>
                     <li><a href="#" class="text-slate-300 hover:text-white transition">My Registrations</a></li>
                 </ul>
 
                 <!-- User Profile Dropdown -->
                 <div class="relative">
-                    <button id="profile-button" class="w-10 h-10 rounded-full bg-amber-500 text-slate-900 flex items-center justify-center font-bold text-lg">
+                    <button id="profile-button" class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg" style="background-color: #7bbbff; color: #050f2a;">
                         P
                     </button>
                     <!-- Dropdown Menu -->
-                    <div id="profile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-gray-800/80 backdrop-blur-lg rounded-lg shadow-lg border border-white/10 py-1">
+                    <div id="profile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-gray-800/80 backdrop-blur-lg rounded-lg shadow-lg py-1" style="border: 1px solid rgba(184, 169, 255, 0.2);">
                         <a href="#" class="block px-4 py-2 text-sm text-slate-300 hover:bg-gray-700">My Profile</a>
                         <a href="login.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-gray-700">Logout</a>
                     </div>
@@ -71,52 +72,52 @@
         <!-- Event Section 1 -->
         <section class="event-section w-full h-screen flex flex-col md:flex-row items-center">
             <!-- Left Panel (Poster) -->
-            <div class="w-full h-1/3 md:h-full md:w-2/5 flex items-center justify-center p-8 bg-cover bg-center relative" style="background-image: url('https://placehold.co/800x1200/002b1f/fbbf24?text=Event+Poster');">
+            <div class="w-full h-1/3 md:h-full md:w-2/5 flex items-center justify-center p-8 bg-cover bg-center relative" style="background-image: url('https://placehold.co/800x1200/050f2a/7bbbff?text=Event+Poster');">
                 <div class="absolute inset-0 bg-black/40"></div>
                 <h2 class="text-5xl font-extrabold text-white text-center drop-shadow-lg z-10">Annual Startup Pitch</h2>
             </div>
             <!-- Right Panel (Details) -->
             <div class="w-full h-2/3 md:h-full md:w-3/5 bg-black/20 backdrop-blur-lg p-8 lg:p-16 flex flex-col justify-center">
-                <span class="text-sm font-semibold text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full self-start">Startup & Business</span>
-                <h1 class="text-4xl lg:text-5xl font-bold mt-4 text-white">Annual Startup Pitch</h1>
+                <span class="text-sm font-semibold px-3 py-1 rounded-full self-start" style="color: #b8a9ff; background-color: rgba(184, 169, 255, 0.1);">Startup & Business</span>
+                <h1 class="text-4xl lg:text-5xl font-bold mt-4" style="color: #f2fdff;">Annual Startup Pitch</h1>
                 <p class="text-slate-300 mt-4 max-w-lg">A premier event for aspiring entrepreneurs to present their innovative ideas to a panel of investors and industry experts. Win seed funding and mentorship!</p>
                 <div class="mt-8 space-y-4 text-slate-200">
                     <div class="flex items-center gap-4">
-                        <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <svg class="w-6 h-6" style="color: #b8a9ff;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                         <span><span class="font-semibold">Event Date:</span> December 15, 2025</span>
                     </div>
                     <div class="flex items-center gap-4">
-                        <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <svg class="w-6 h-6" style="color: #b8a9ff;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         <span><span class="font-semibold">Registration Deadline:</span> Oct 31, 2025</span>
                     </div>
                 </div>
-                <button class="mt-10 bg-amber-500 text-slate-900 font-bold py-4 px-8 rounded-full hover:bg-amber-400 transition-transform transform hover:scale-105 self-start">Register Now</button>
+                <button class="mt-10 font-bold py-4 px-8 rounded-full hover:bg-opacity-90 transition-transform transform hover:scale-105 self-start" style="background-color: #7bbbff; color: #050f2a;">Register Now</button>
             </div>
         </section>
 
         <!-- Event Section 2 -->
         <section class="event-section w-full h-screen flex flex-col md:flex-row items-center">
             <!-- Left Panel (Poster) -->
-             <div class="w-full h-1/3 md:h-full md:w-2/5 flex items-center justify-center p-8 bg-cover bg-center relative" style="background-image: url('https://placehold.co/800x1200/002b1f/fbbf24?text=Event+Poster');">
+             <div class="w-full h-1/3 md:h-full md:w-2/5 flex items-center justify-center p-8 bg-cover bg-center relative" style="background-image: url('https://placehold.co/800x1200/050f2a/7bbbff?text=Event+Poster');">
                 <div class="absolute inset-0 bg-black/40"></div>
                 <h2 class="text-5xl font-extrabold text-white text-center drop-shadow-lg z-10">Hackathon 2025</h2>
             </div>
             <!-- Right Panel (Details) -->
             <div class="w-full h-2/3 md:h-full md:w-3/5 bg-black/20 backdrop-blur-lg p-8 lg:p-16 flex flex-col justify-center">
-                <span class="text-sm font-semibold text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full self-start">Technology & Coding</span>
-                <h1 class="text-4xl lg:text-5xl font-bold mt-4 text-white">Hackathon 2025</h1>
+                <span class="text-sm font-semibold px-3 py-1 rounded-full self-start" style="color: #b8a9ff; background-color: rgba(184, 169, 255, 0.1);">Technology & Coding</span>
+                <h1 class="text-4xl lg:text-5xl font-bold mt-4" style="color: #f2fdff;">Hackathon 2025</h1>
                 <p class="text-slate-300 mt-4 max-w-lg">A 24-hour coding marathon where teams collaborate to build innovative software solutions. Join us for a weekend of coding, learning, and fun!</p>
                 <div class="mt-8 space-y-4 text-slate-200">
                     <div class="flex items-center gap-4">
-                        <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <svg class="w-6 h-6" style="color: #b8a9ff;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                         <span><span class="font-semibold">Event Date:</span> November 22-23, 2025</span>
                     </div>
                     <div class="flex items-center gap-4">
-                        <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <svg class="w-6 h-6" style="color: #b8a9ff;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         <span><span class="font-semibold">Registration Deadline:</span> Nov 15, 2025</span>
                     </div>
                 </div>
-                 <button class="mt-10 bg-slate-700 text-slate-400 font-bold py-4 px-8 rounded-full cursor-not-allowed flex items-center gap-2 self-start">
+                 <button class="mt-10 font-bold py-4 px-8 rounded-full cursor-not-allowed flex items-center gap-2 self-start" style="background-color: #b8a9ff; color: #050f2a; opacity: 0.7;">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                     Registered
                 </button>

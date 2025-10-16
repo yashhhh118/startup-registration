@@ -11,7 +11,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(-45deg, #002b1f, #004d40, #002633);
+            background: linear-gradient(-45deg, #050f2a, #1a2955, #050f2a);
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
         }
@@ -26,44 +26,44 @@
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px); /* For Safari */
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(184, 169, 255, 0.2); /* Lavender border */
         }
 
         .form-input {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(184, 169, 255, 0.1);
+            border: 1px solid rgba(184, 169, 255, 0.2);
             transition: background-color 0.3s ease;
         }
         .form-input:focus {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(251, 191, 36, 0.7);
+            background: rgba(184, 169, 255, 0.2);
+            border-color: #7bbbff; /* Light Blue */
         }
 
         .form-button {
-            background-color: #f59e0b; /* A vibrant amber/gold */
-            color: #1a202c; /* Dark text for contrast */
+            background-color: #7bbbff; /* Light Blue */
+            color: #050f2a; /* Dark Blue text */
         }
         .form-button:hover {
-            background-color: #d97706;
+            background-color: #6aaee6;
         }
 
         .signup-button {
             background-color: transparent;
-            border: 2px solid #fbbf24;
-            color: #fbbf24;
+            border: 2px solid #b8a9ff; /* Lavender */
+            color: #b8a9ff;
         }
         .signup-button:hover {
-            background-color: #fbbf24;
-            color: #111827; /* Dark text on hover */
+            background-color: #b8a9ff;
+            color: #050f2a; /* Dark text on hover */
         }
     </style>
 </head>
-<body class="text-white">
+<body style="color: #f2fdff;">
     <div class="min-h-screen flex items-center justify-center p-4">
         <div class="w-full max-w-5xl h-auto md:h-[600px] flex flex-col md:flex-row rounded-2xl shadow-2xl overflow-hidden main-card">
             
             <!-- Left Panel -->
-            <div class="w-full md:w-1/3 flex flex-col items-center justify-center p-8 text-center order-2 md:order-1 md:border-r border-white/20">
+            <div class="w-full md:w-1/3 flex flex-col items-center justify-center p-8 text-center order-2 md:order-1 md:border-r" style="border-color: rgba(184, 169, 255, 0.2);">
                 <h2 class="text-3xl font-bold mb-4">Club Hub</h2>
                 <p class="mb-6 text-slate-300">New User?</p>
                 <a href="#" id="signup-button" class="rounded-full px-8 py-2 font-semibold transition-colors duration-300 signup-button">
@@ -75,17 +75,17 @@
             <!-- Right Panel -->
             <div class="w-full md:w-2/3 flex items-center justify-center p-8 order-1 md:order-2">
                 <div class="w-full max-w-md text-center">
-                    <h1 id="form-title" class="text-4xl font-bold text-white mb-8 transition-all duration-300">Participant Login</h1>
+                    <h1 id="form-title" class="text-4xl font-bold mb-8 transition-all duration-300" style="color: #f2fdff;">Participant Login</h1>
                     
                     <!-- Login Form -->
                     <form id="login-form">
                         <div class="mb-6">
-                            <input type="text" id="login-id" class="w-full px-6 py-4 rounded-full form-input text-white placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-violet-400" placeholder="Participant Name or Email (Optional)">
+                            <input type="text" id="login-id" class="w-full px-6 py-4 rounded-full form-input placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-400" placeholder="Participant Name or Email (Optional)" style="color: #f2fdff;">
                         </div>
                         <div class="mb-8">
-                            <input type="password" id="login-password" class="w-full px-6 py-4 rounded-full form-input text-white placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-violet-400" placeholder="Password" required>
+                            <input type="password" id="login-password" class="w-full px-6 py-4 rounded-full form-input placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-400" placeholder="Password" required style="color: #f2fdff;">
                         </div>
-                        <button type="submit" class="w-full rounded-full py-4 form-button text-white font-bold text-lg tracking-wider transition-transform transform hover:scale-105 duration-300">
+                        <button type="submit" class="w-full rounded-full py-4 form-button font-bold text-lg tracking-wider transition-transform transform hover:scale-105 duration-300">
                             LOGIN
                         </button>
                     </form>
@@ -97,33 +97,33 @@
                             <div class="grid grid-cols-2 gap-4">
                                 <label>
                                     <input type="radio" name="role" value="participant" class="sr-only peer" checked>
-                                    <div class="p-3 text-center rounded-full border-2 border-slate-600 peer-checked:bg-amber-500 peer-checked:text-slate-900 peer-checked:border-amber-400 cursor-pointer transition-colors">
+                                    <div class="p-3 text-center rounded-full border-2 border-slate-600 peer-checked:bg-blue-400 peer-checked:text-slate-900 peer-checked:border-blue-400 cursor-pointer transition-colors">
                                         Participant
                                     </div>
                                 </label>
                                 <label>
                                     <input type="radio" name="role" value="host" class="sr-only peer">
-                                    <div class="p-3 text-center rounded-full border-2 border-slate-600 peer-checked:bg-amber-500 peer-checked:text-slate-900 peer-checked:border-amber-400 cursor-pointer transition-colors">
+                                    <div class="p-3 text-center rounded-full border-2 border-slate-600 peer-checked:bg-blue-400 peer-checked:text-slate-900 peer-checked:border-blue-400 cursor-pointer transition-colors">
                                         Host
                                     </div>
                                 </label>
                             </div>
                         </div>
                         <div class="mb-4">
-                             <input type="text" class="w-full px-6 py-3 rounded-full form-input text-white placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-amber-400" placeholder="Full Name" required>
+                             <input type="text" class="w-full px-6 py-3 rounded-full form-input placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-400" placeholder="Full Name" required style="color: #f2fdff;">
                         </div>
                          <div class="mb-4">
-                            <input type="email" class="w-full px-6 py-3 rounded-full form-input text-white placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-amber-400" placeholder="Email Address" required>
+                            <input type="email" class="w-full px-6 py-3 rounded-full form-input placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-400" placeholder="Email Address" required style="color: #f2fdff;">
                         </div>
                         <div class="mb-6">
-                            <input type="password" class="w-full px-6 py-3 rounded-full form-input text-white placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-amber-400" placeholder="Create Password" required>
+                            <input type="password" class="w-full px-6 py-3 rounded-full form-input placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-400" placeholder="Create Password" required style="color: #f2fdff;">
                         </div>
                         <button type="submit" class="w-full rounded-full py-4 form-button font-bold text-lg">CREATE ACCOUNT</button>
                     </form>
 
                     <div class="mt-6 flex justify-between items-center">
                         <a href="#" class="text-sm text-slate-400 hover:underline">Forgot Password?</a>
-                        <a href="#" id="host-toggle-button" class="text-sm text-amber-300 font-semibold hover:underline">Host Login</a>
+                        <a href="#" id="host-toggle-button" class="text-sm font-semibold hover:underline" style="color: #b8a9ff;">Host Login</a>
                     </div>
                 </div>
             </div>
@@ -175,7 +175,4 @@
     </script>
 </body>
 </html>
-
-
-
 

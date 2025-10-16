@@ -59,7 +59,7 @@
                 <img src="https://placehold.co/800x1200/050f2a/dbeafe?text=Event+Poster" alt="Event Poster" class="w-full h-auto rounded-xl shadow-lg">
             </div>
 
-            <!-- Right Panel - Details with a much lighter blue background -->
+            <!-- Right Panel - Details -->
             <div class="w-full md:w-2/3 rounded-xl shadow-lg p-8 text-[#050f2a]" style="background-color: #dbeafe;">
                 <h1 class="text-4xl font-extrabold">Annual Startup Pitch</h1>
                 <p class="mt-2 text-lg text-[#050f2a]/80">Hosted by PCCOE Incubation Cell</p>
@@ -91,7 +91,7 @@
                 </div>
 
                 <div class="mt-8 border-t border-[#050f2a]/20 pt-6 flex flex-col sm:flex-row gap-4 items-center">
-                    <button class="w-full sm:w-auto font-bold py-4 px-10 rounded-full transition-transform transform hover:scale-105" style="background-color: #7bbbff; color: #050f2a;">
+                    <button id="register-btn" class="w-full sm:w-auto font-bold py-4 px-10 rounded-full transition-transform transform hover:scale-105" style="background-color: #7bbbff; color: #050f2a;">
                         Register Now
                     </button>
                     <a href="#" class="font-semibold border-b-2 border-transparent hover:border-[#050f2a]" style="color: #050f2a;">
@@ -102,6 +102,101 @@
         </div>
     </main>
 
+    <!-- Registration Modal -->
+    <div id="registration-modal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="w-full max-w-lg rounded-xl shadow-lg p-8 text-[#050f2a] relative" style="background-color: #dbeafe;">
+            <!-- Close Button -->
+            <button id="close-modal-btn" class="absolute top-4 right-4 text-[#050f2a]/50 hover:text-[#050f2a]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+            
+            <h2 class="text-2xl font-bold">Confirm Your Registration</h2>
+            <p class="text-lg mt-1 text-[#050f2a]/80">for <span class="font-semibold">Annual Startup Pitch</span></p>
+
+            <div class="mt-6 border-t border-[#050f2a]/20 pt-6 space-y-4">
+                <!-- NEW DETAILED FIELDS -->
+                <div>
+                    <label for="reg-name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                    <input type="text" id="reg-name" class="mt-1 w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#7bbbff]" placeholder="Enter your full name" required>
+                </div>
+                 <div>
+                    <label for="reg-email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                    <input type="email" id="reg-email" class="mt-1 w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#7bbbff]" placeholder="Enter your email" required>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="reg-college" class="block text-sm font-medium text-gray-700">College Name</label>
+                        <input type="text" id="reg-college" class="mt-1 w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#7bbbff]" placeholder="Your college" required>
+                    </div>
+                    <div>
+                        <label for="reg-year" class="block text-sm font-medium text-gray-700">Year of Study</label>
+                         <select id="reg-year" class="mt-1 w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#7bbbff]">
+                            <option>First Year</option>
+                            <option>Second Year</option>
+                            <option>Third Year</option>
+                            <option>Final Year</option>
+                        </select>
+                    </div>
+                </div>
+                 <div>
+                    <label for="reg-contact" class="block text-sm font-medium text-gray-700">Contact Number</label>
+                    <input type="tel" id="reg-contact" class="mt-1 w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#7bbbff]" placeholder="Your phone number" required>
+                </div>
+                 <hr class="border-[#050f2a]/20">
+                <div>
+                    <label for="team-name" class="block text-sm font-medium text-gray-700">Team Name (Optional)</label>
+                    <input type="text" id="team-name" class="mt-1 w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#7bbbff]" placeholder="e.g., The Innovators">
+                </div>
+            </div>
+
+            <div class="mt-8 flex justify-end gap-4">
+                <button id="cancel-btn" class="font-semibold text-gray-600 py-3 px-6 rounded-full hover:bg-black/10">Cancel</button>
+                <button id="confirm-reg-btn" class="font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105" style="background-color: #7bbbff; color: #050f2a;">Confirm Registration</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Message -->
+    <div id="success-message" class="hidden fixed top-5 right-5 bg-green-500 text-white py-3 px-5 rounded-lg shadow-xl">
+        <p>✅ Registration successful!</p>
+    </div>
+
+    <script>
+        // --- Modal Interactivity ---
+        const registerBtn = document.getElementById('register-btn');
+        const registrationModal = document.getElementById('registration-modal');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const cancelBtn = document.getElementById('cancel-btn');
+        const confirmRegBtn = document.getElementById('confirm-reg-btn');
+        const successMessage = document.getElementById('success-message');
+
+        function openModal() {
+            registrationModal.classList.remove('hidden');
+        }
+        function closeModal() {
+            registrationModal.classList.add('hidden');
+        }
+
+        registerBtn.addEventListener('click', openModal);
+        closeModalBtn.addEventListener('click', closeModal);
+        cancelBtn.addEventListener('click', closeModal);
+        
+        confirmRegBtn.addEventListener('click', () => {
+            closeModal();
+            // Show success message
+            successMessage.classList.remove('hidden');
+            // Hide the register button on the main page
+            registerBtn.textContent = '✅ Registered';
+            registerBtn.disabled = true;
+            registerBtn.style.backgroundColor = '#b8a9ff'; // Lavender
+            registerBtn.style.cursor = 'not-allowed';
+            
+            // Hide success message after 3 seconds
+            setTimeout(() => {
+                successMessage.classList.add('hidden');
+            }, 3000);
+        });
+    </script>
 </body>
 </html>
 
